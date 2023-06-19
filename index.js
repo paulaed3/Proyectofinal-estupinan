@@ -1,5 +1,6 @@
+// funciones
 function ingresarValorProducto() {
-  var valor = prompt(
+  let valor = prompt(
     "Ingresa el valor de cada producto en COP y cuando termines de ingresarlos escribe 'fin' para terminar:"
   );
 
@@ -42,6 +43,7 @@ function mostrarMensajeTotal(total) {
   alert("Total de tu compra con envío incluido: $" + total);
 }
 
+// Ejecucion codigo
 let total = 0;
 let valorProducto = ingresarValorProducto();
 
