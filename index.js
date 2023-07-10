@@ -1,29 +1,27 @@
-// funciones
-function ingresarValorProducto() {
-  let valor = prompt(
-    "Ingresa el valor de cada producto en COP y cuando termines de ingresarlos escribe 'fin' para terminar:"
-  );
-
-  while (valor.toLowerCase() !== "fin" && isNaN(parseFloat(valor))) {
-    valor = prompt(
-      "El valor ingresado no es válido. Por favor, ingresa un valor numérico para el producto:"
-    );
+// Funciones
+function ingresarProducto() {
+  let nombre = prompt("Ingresa el nombre del producto o escribe 'fin' para terminar:");
+  
+  if (nombre.toLowerCase() === "fin") {
+    return null;
   }
-
-  return valor.toLowerCase() === "fin" ? null : parseFloat(valor);
+  
+  let precio = prompt("Ingresa el precio del producto en COP:");
+  
+  while (isNaN(parseFloat(precio))) {
+    precio = prompt("El valor ingresado no es válido. Por favor, ingresa un valor numérico para el producto:");
+  }
+  
+  return { nombre, precio: parseFloat(precio) };
 }
 
 function obtenerTipoEnvio() {
-  let envio = prompt(
-    "¿El envío es nacional o internacional?. Escribe N para nacional o I para internacional"
-  );
-
+  let envio = prompt("¿El envío es nacional o internacional?. Escribe N para nacional o I para internacional");
+  
   while (!(envio.toLowerCase() === "n" || envio.toLowerCase() === "i")) {
-    envio = prompt(
-      "Opción inválida. Por favor, ingresa 'N' para envío nacional o 'I' para envío internacional:"
-    );
+    envio = prompt("Opción inválida. Por favor, ingresa 'N' para envío nacional o 'I' para envío internacional:");
   }
-
+  
   return envio.toLowerCase();
 }
 
@@ -35,7 +33,7 @@ function calcularTotalConEnvio(total, envio) {
   } else if (envio === "i") {
     total += 18000;
   }
-
+  
   return total;
 }
 
@@ -43,21 +41,29 @@ function mostrarMensajeTotal(total) {
   alert("Total de tu compra con envío incluido: $" + total);
 }
 
-// Ejecucion codigo
+// Ejecución del código
 let total = 0;
-let valorProducto = ingresarValorProducto();
+let productos = [];
 
-while (valorProducto !== null) {
-  total += valorProducto;
-  valorProducto = ingresarValorProducto();
+let producto = ingresarProducto();
+
+while (producto !== null) {
+  productos.push(producto);
+  total += producto.precio;
+  producto = ingresarProducto();
 }
 
 if (total > 0) {
+  console.log('Array de productos con sus precios:');
+  productos.forEach(producto => {
+    console.log(`${producto.nombre}: $${producto.precio}`);
+  });
+  
   alert("Total de tu carrito es: $" + total);
-
+  
   let tipoEnvio = obtenerTipoEnvio();
   let totalConEnvio = calcularTotalConEnvio(total, tipoEnvio);
-
+  
   mostrarMensajeTotal(totalConEnvio);
 } else {
   alert("No se agregaron productos al carrito. Compra cancelada.");
