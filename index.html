@@ -86,97 +86,80 @@
       <section class="hero">
         <h1 class="hero__title">Carrito</h1>
       </section>
-      <section class="cart_products">
-        <div class="cart_product">
-          <img width="200px" src="#" alt="" />
-          <div class="product__info">
-            <h3>Producto 1</h3>
-            <p>$100.000</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod hic
-              nam modi
-            </p>
-            <div class="product__actions">
-              <div class="action__count">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-              </div>
-              <button class="action__delete">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="cart_product">
-          <img width="200px" src="#" alt="" />
-          <div class="product__info">
-            <h3>Producto 2</h3>
-            <p>$200.000</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod hic
-              nam modi
-            </p>
-            <div class="product__actions">
-              <div class="action__count">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-              </div>
-              <button class="action__delete">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="cart_product">
-          <img width="200px" src="#" alt="" />
-          <div class="product__info">
-            <h3>Producto 3</h3>
-            <p>$300.000</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod hic
-              nam modi
-            </p>
-            <div class="product__actions">
-              <div class="action__count">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-              </div>
-              <button class="action__delete">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="cart_product">
-          <img width="200px" src="#" alt="" />
-          <div class="product__info">
-            <h3>Producto 4</h3>
-            <p>$400.000</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod hic
-              nam modi
-            </p>
-            <div class="product__actions">
-              <div class="action__count">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-              </div>
-              <button class="action__delete">Eliminar</button>
-            </div>
-          </div>
-        </div>
-        <div class="cart_product">
-          <div class="product__info">
-            <h3>Resumen de la compra</h3>
-            <p>Valor de los productos</p>
-            <p>Valor del envio</p>
-            <p>Valor total</p>
-            <div class="product__actions">
-              <div class="action__count"></div>
-              <button class="action__placeorder">Realizar compra</button>
-            </div>
-          </div>
-        </div>
+      <section class="cart_products" data-id="id_product">
+        <!-- productos agregados -->
       </section>
+<section class="clean__cart" >
+  <div>
+    <button id="deletecartbutton" type="submit" class="btn__cleancart">
+      Vaciar carrito
+  </div>
+</section>
+      <section class="add_product">
+        <h2>Agregar Producto</h2>
+        <form id="productForm" class="add_product__form">
+          <div class="mb-3">
+            <label for="productName" class="form-label"
+              >Nombre del producto</label
+            >
+            <input type="text" class="form-control" id="productName" required />
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label"
+              >Precio del producto en COP</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="productPrice"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Agregar al Carrito
+          </button>
+        </form>
+      </section>
+
+      <section class="cart_summary add_product">
+        <h2>Resumen de la compra</h2>
+        <p>Total de la compra: <span id="total">0.00</span></p>
+        <div class="d-flex mb-3">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipoEnvio"
+              value="n"
+              id="envioNacional"
+              checked
+            />
+            <label class="form-check-label" for="envioNacional"
+              >Envío Nacional (8.000 COP para compras inferiores a 50.000)</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipoEnvio"
+              value="i"
+              id="envioInternacional"
+            />
+            <label class="form-check-label" for="envioInternacional "
+              >Envío Internacional (18.000 COP)</label
+            >
+          </div>
+        </div>
+        <button id="calcularTotalButton" type="submit" class="btn btn-primary add_product__form button">
+          Calcular total
+        </button>
+        <p>
+          Total de la compra con envío: <span id="totalConEnvio">0.00</span>
+        </p>
+              </section>
     </main>
+
     <!-- Footer -->
     <footer class="container-fluid">
       <div class="mx-auto text text-center">

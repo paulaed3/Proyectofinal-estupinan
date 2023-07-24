@@ -152,3 +152,73 @@ body {
 .dropdown-menu {
   background-color: #f9c6f2;
 }
+
+/* Estilo para la sección de agregar productos */
+.add_product {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin:20px  auto 50px  auto;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.add_product h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.add_product__form label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add_product__form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.add_product__form button, .add_product__form.button  {
+  background-color: #f9c6f2;
+  color: #000;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.add_product__form button:hover {
+  background-color: #000;
+  color: #f9c6f2;
+}
+
+.clean__cart {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 60px;
+}
+
+
+.btn__cleancart {
+  background-color: #f9c6f2;
+  padding: 50px;
+  color: #000;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+}
