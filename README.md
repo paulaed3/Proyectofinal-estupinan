@@ -18,7 +18,7 @@ Este repositorio contiene mi proyecto final para el curso de JavaScript. El proy
 1. **Clonar el repositorio:** Descarga o clona este repositorio en tu máquina local.
 
    ```bash
-   git clone https://github.com/tu-usuario/entrega-final-curso-js.git
+   git clone https://github.com/paulaed3/Proyectofinal-estupinan.git
    ```
 
 2. **Abrir el proyecto:** Navega a la carpeta del proyecto en tu explorador de archivos y abre el archivo index.html en tu navegador web preferido.
